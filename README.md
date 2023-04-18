@@ -1,16 +1,20 @@
 # Syncing vagrant to Virtual Machine and running a app
 
-
+![alt](img/vagrant.png)
 
 ## Create a Vagrant file
 
-1. Make sure to be in the correct folder in vs code by using `cd` iv put mine in the virtualisation folder
-2. Then we use the command `touch vagrant` to make a vagrant file in the repo
-3. We then change the ‘base’ to look like this 
+1. Make sure to be in the correct folder in vs code by using `cd` iv put mine in the virtualisation folder.
+2. Then we use the command `touch vagrant` to make a vagrant file in the repo.
+3. We then change the ‘base’ to look like this.
 
- `Vagrant.configure("2") do |config|
+ `Vagrant.configure("2") do |config|`
 
-  config.vm.box = "ubuntu/xenial64”`
+  `config.vm.box = "ubuntu/xenial64”`
+
+![alt](img/vagrant-config.png)
+
+
 
 4. We then use `vagrant up` to access vagrant from vs code
 
@@ -21,12 +25,15 @@
 1. We `touch provision.sh` to create a provision shell file
 2. Then add this script to the file in vscode 
 
-`#!/bin/bash
+`#!/bin/bash`
+
+`sudo apt-get update -y` 
+`sudo apt-get upgrade -y`
+`sudo apt-get install nginx -y`
+
+![alt](img/provision.png)
 
 
-sudo apt-get update -y 
-sudo apt-get upgrade -y
-sudo apt-get install nginx -y`
 
 3. Then we add this line into the vagrant file as the 3rd line 
 
@@ -42,7 +49,7 @@ sudo apt-get install nginx -y`
 4. The do `vagrant up` 
 5. Then in bash - `vagrant ssh`then use `ls` to check the app folder has synced over to the virtual machine
 
-# install ruby to run tests and check 
+## install ruby to run tests and check 
 
 1. `cd` into environment folder and then into spec-tests
 2. `sudo gem install bundler` - without sudo may give permission failure
@@ -59,7 +66,9 @@ sudo apt-get install nginx -y`
 13. Install node package manager into the app folder `sudo npm install pm2 -g` then `npm install` 
 14. And `npm start`
 15. Should see a message saying “Your app is ready and listening on port 3000”
-16. To check enter the ip in the browser followed by :3000
+16. To check enter the ip in the browser followed by :3000 and you should see this
+![alt](img/welcome.png)
+
 
 
 # npm vs pm2 
