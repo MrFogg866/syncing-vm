@@ -62,5 +62,28 @@ sudo apt-get install nginx -y`
 16. To check enter the ip in the browser followed by :3000
 
 
+# npm vs pm2 
 
-# syncing-vm
+- nmp = node package manager
+- pm2 = nodes process manager
+
+
+
+# nginx reverse proxy 
+
+1. What are ports? (research)
+- In computing, a port or port number is a number assigned to a uniquely identify a connection endpoint, and to direct data to a specific service.
+
+
+2. What is a reverse proxy? 
+
+- this is a layer of protection that sits in front of web servers and forwards client (e.g. web browser) requests to those web servers. A reverse proxy protects web servers from attacks and can provide performance and reliability benefits. ip address hidden from user, also for load balancing these are used and handling SSL Encryption
+
+3. How is it different to a proxy? (research)
+- a forward proxy protects the clients online identity, bypasses browsing restrictions and can be used to restrict certain content, it sits between the clients and the internet to do this, a reverse proxy sits between the internet and the web servers
+
+- Make a diagram for the above point to go with your explanation
+
+- What is Nginx's default configuration (hint - 'sites-available' directory)
+
+- How do you set up a Nginx reverse proxy?
