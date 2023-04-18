@@ -77,11 +77,14 @@ sudo apt-get install nginx -y`
 
 2. What is a reverse proxy? 
 
-![alt](syncing-vm/img/reverse-proxy.png)
+![alt](img/reverse-proxy.png)
 
 - this is a layer of protection that sits in front of web servers and forwards client (e.g. web browser) requests to those web servers. A reverse proxy protects web servers from attacks and can provide performance and reliability benefits. ip address hidden from user, also for load balancing these are used and handling SSL Encryption
 
-3. How is it different to a proxy? (research)
+3. How is it different to a proxy? 
+
+![alt](img/reverse-proxy.png)
+
 - a forward proxy protects the clients online identity, bypasses browsing restrictions and can be used to restrict certain content, it sits between the clients and the internet to do this, a reverse proxy sits between the internet and the web servers
 
 - Make a diagram for the above point to go with your explanation
