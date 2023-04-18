@@ -94,10 +94,15 @@
 
 ![alt](img/reverse-proxy.png)
 
-- a forward proxy protects the clients online identity, bypasses browsing restrictions and can be used to restrict certain content, it sits between the clients and the internet to do this, a reverse proxy sits between the internet and the web servers
+- a forward proxy protects the clients online identity, bypasses browsing restrictions and can be used to restrict certain content, it sits between the clients and the internet to do this, a reverse proxy sits between the internet and the web servers. A simplified way to sum it up would be to say that a forward proxy sits in front of a client and ensures that no origin server ever communicates directly with that specific client.
 
-- Make a diagram for the above point to go with your explanation
 
-- What is Nginx's default configuration (hint - 'sites-available' directory)
+
+4. What is Nginx's default configuration (hint - 'sites-available' directory)
+
+- to check this we can run `cat /etc/nginx/nginx.conf` to check default config and we will see the default configuration and this is port 80 
+
+![alt](img/nginx-config.png)
 
 - How do you set up a Nginx reverse proxy?
+- 1st we need to change the default config of Nginx
