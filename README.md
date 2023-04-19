@@ -114,27 +114,3 @@
 
 1. First we need to use `vagrant up` in our VS Code terminal.
 2. then  use vagrant ssh in GitBash terminal (in our virtualisation folder).
-Make sure that Nginx is installed: sudo apt-get install nginx or sudo systemctl status nginx.
-Now we need to navigate to Nginx configuration file : cd /etc/nginx/sites-available/.
-Create reverse proxy file in the folder: sudo nano reverse-proxy.
-In that file type :
-server {
-   listen 80;
-   server_name 192.168.10.100;
-
-   location / {
-       proxy_pass http://192.168.10.100:3000;
-       proxy_set_header Host $host;
-       proxy_set_header X-Real-IP $remote_addr;
-       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header X-Forwarded-Proto $scheme;
-   }
-}
-Next go back to main directory: cd & navigate to: cd /etc/.
-Use sudo nano hosts & at the end of the file add:
-192.168.1.100   backend-server
-Create a symbolic link to the new configuration file in the "/etc/nginx/sites-enabled" directory by running the command sudo ln -s /etc/nginx/sites-available/reverse-proxy /etc/nginx/sites-enabled/.
-Check configuration file for errors by using: sudo nginx -t.
-Reload Nginx : sudo systemctl reload nginx.
-Now we can access our "Sparta App" by typing IP in browser.
-- 1st we need to change the default config of Nginx
